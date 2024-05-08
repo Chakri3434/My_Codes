@@ -1,8 +1,9 @@
 def pal(n):
-  if n=='':
+  p=n.lower()
+  if p=='':
     return True
-  elif n[0]==n[-1]:
-    return pal(n[1:len(n)-1])
+  elif p[0]==p[-1]:
+    return pal(p[1:len(p)-1])
   else:
     return False
 print(pal(input()))
