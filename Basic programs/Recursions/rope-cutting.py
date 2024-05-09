@@ -1,8 +1,9 @@
-#given a rope of length n, and cuts a,b,c applied. 
-#find the max number of cuts that can be made on the rope. 
-#if exact cuts can't be made, return 0
-#e.g i/p : 5  (2,5,1)
-#    o/p : 5 (cut of 1 can be made 5 times to completely cut the rope.)
+# given a rope of length n, and cuts a,b,c applied. 
+# find the max number of cuts that can be made on the rope. 
+# if exact cuts can't be made, return 0
+# e.g :
+# i/p : 5  (2,5,1)
+# o/p : 5 (cut of 1 can be made 5 times to completely cut the rope.)
 
 def rope(n,a,b,c):
   if n==0 :
