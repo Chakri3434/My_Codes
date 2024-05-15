@@ -6,7 +6,7 @@ def f(n):
       l2=l1
       l1=n[i]
     else:
-      if n[i]<l2:
+      if n[i]>l2 and n[i]!=l1:
         l2=n[i]
   if l1==l2:
     return -1
