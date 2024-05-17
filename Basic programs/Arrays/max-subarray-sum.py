@@ -9,6 +9,7 @@ def f(l):
     return res
 
 # efficient : O(n)
+# Kadane's Algorithm
 def f(l):
     res=l[0]
     maxEnding=l[0]
