@@ -3,7 +3,7 @@ def f(txt,pat):
     m=len(pat)
     p,t,h=0,0,1
     d=5
-    q=33
+    q=89 #choose q as a big primenumber so that problem simplifies for bigger strings
 
     #calculate (d^(m-1))%q
     for i in range(1,m):
