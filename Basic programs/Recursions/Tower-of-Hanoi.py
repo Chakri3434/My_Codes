@@ -5,6 +5,7 @@
 # a is initial position
 # b is auxilary position
 # c is final destination
+#give instructions to move the discs
 
 def toh(n,a,b,c):
   if n==1:
