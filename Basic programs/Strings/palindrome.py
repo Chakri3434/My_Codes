@@ -1,4 +1,4 @@
-#using 2 pointers
+#using 2 pointers(best)
 
 def f(l):
     s,e=0,len(l)-1
