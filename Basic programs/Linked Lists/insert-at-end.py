@@ -14,7 +14,7 @@ class LinkedList:
             print('The linked list is empty')
         else:
             while self.head != None:
-                print(self.head.data)
+                print(self.head.data,'-->',end='')
                 self.head = self.head.next
                 
     def insertBegin(self,data):
@@ -30,6 +30,7 @@ class LinkedList:
         curr.next = newnode
 l1=LinkedList()
 l1.insertBegin(10)
+l1.insertEnd(40)
 l1.insertBegin(20)
 l1.insertEnd(30)
 l1.traverse()
