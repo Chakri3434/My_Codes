@@ -17,4 +17,4 @@ class LinkedList:
                 print(self.head.data)
                 self.head = self.head.next
 l1=linkedList()
-l1.traversal()
+l1.traverse()
