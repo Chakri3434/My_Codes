@@ -13,10 +13,10 @@ class LinkedList:
         if self.head is None:
             print('The linked list is empty')
         else:
-            while self.head != None:
+            while self.head.next != None:
                 print(self.head.data,'-->',end='')
                 self.head = self.head.next
-                
+            print(self.head.data)   
     def insertBegin(self,data):
         newnode = Node(data)
         newnode.next = self.head
