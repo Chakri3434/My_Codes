@@ -40,11 +40,23 @@ class DoubleLinkedList:
             newnode.prev = curr
             newnode.next = None
 
+    def reverse(self):
+        temp = None
+        curr = self.head
+        while curr!=None:
+            temp = curr.prev
+            curr.prev = curr.next
+            curr.next = temp
+            curr = curr.next
+        if temp != None:
+            self.head = temp.prev
+            
 dl1=DoubleLinkedList()
 dl1.insertBegin(30)
 dl1.insertBegin(40)
 dl1.insertEnd(50)
 dl1.insertBegin(20)
 dl1.insertEnd(10)
+dl1.reverse()
 dl1.printLL()
         
