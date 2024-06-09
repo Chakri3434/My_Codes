@@ -1,62 +1,58 @@
 class Node:
-    
     def __init__(self,data):
         self.data = data
-        self.prev = None
         self.next = None
-        
-class DoubleLinkedList:
-    
+        self.prev = None
+class DLinkedList:
     def __init__(self):
         self.head = None
-        
-    def printLL(self):
-        curr = self.head
-        while curr != None:
-            print(curr.data)
-            curr = curr.next
     
-    def insertBegin(self,data):
+    def print(self):
+        if self.head is None:
+            print('Linked list is empty')
+        else:
+            while self.head!=None:
+                print(self.head.data)
+                self.head = self.head.next
+    
+    def addatBegin(self,data):
         newnode = Node(data)
         if self.head is None:
-            newnode.prev = None
+            newnode.prev =None
             self.head = newnode
         else:
             self.head.prev = newnode
             newnode.next = self.head
-            self.head = newnode
             newnode.prev = None
-        
-    def insertEnd(self,data):
+            self.head = newnode
+            
+    def addatEnd (self,data):
         newnode = Node(data)
         if self.head is None:
-            newnode.prev = None
+            newnode.prev =None
             self.head = newnode
         else:
-            curr = self.head
-            while curr.next != None:
-                curr = curr.next
-            curr.next = newnode
+            curr=self.head
+            while curr.next!=None:
+                curr=curr.next
+            curr.next=newnode
             newnode.prev = curr
             newnode.next = None
-
+    
     def reverse(self):
+        curr=self.head
         temp = None
-        curr = self.head
         while curr!=None:
             temp = curr.prev
             curr.prev = curr.next
             curr.next = temp
-            curr = curr.next
-        if temp != None:
+            curr = curr.prev
+        if temp:
             self.head = temp.prev
+l1=DLinkedList()
+l1.addatBegin(20)
+l1.addatBegin(30)
+l1.addatEnd(40)
+l1.reverse()
+l1.print()
             
-dl1=DoubleLinkedList()
-dl1.insertBegin(30)
-dl1.insertBegin(40)
-dl1.insertEnd(50)
-dl1.insertBegin(20)
-dl1.insertEnd(10)
-dl1.reverse()
-dl1.printLL()
-        
