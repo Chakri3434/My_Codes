@@ -58,6 +58,14 @@ class DLinkedList:
         else:
             curr.prev = None
             self.head = curr
+            
+    def deleteLast(self):
+        curr = self.head
+        while curr.next!=None:
+            curr = curr.next
+        curr = curr.prev
+        curr.next=None
+        
 l1=DLinkedList()
 l1.addatBegin(20)
 l1.addatBegin(30)
@@ -66,6 +74,7 @@ l1.addatBegin(50)
 l1.addatEnd(70)
 l1.reverse()
 l1.deleteBegin()
-
+l1.deleteLast()
+l1.deleteLast()
 l1.print()
             
