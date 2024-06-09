@@ -49,10 +49,23 @@ class DLinkedList:
             curr = curr.prev
         if temp:
             self.head = temp.prev
+            
+    def deleteBegin(self):
+        curr = self.head
+        curr = curr.next
+        if curr==None:
+            self.head = None
+        else:
+            curr.prev = None
+            self.head = curr
 l1=DLinkedList()
 l1.addatBegin(20)
 l1.addatBegin(30)
 l1.addatEnd(40)
+l1.addatBegin(50)
+l1.addatEnd(70)
 l1.reverse()
+l1.deleteBegin()
+
 l1.print()
             
