@@ -27,8 +27,21 @@ class CircularLinkedList:
             curr.next = newnode
             newnode.next = self.head
             self.head = newnode
+    def addEnd(self,data):
+        newnode = Node(data)
+        if self.head is None:
+            self.head = newnode
+            newnode.next = self.head
+        else:
+            curr = self.head
+            while curr.next != self.head:
+                curr = curr.next
+            curr.next = newnode
+            newnode.next = self.head
 cl=CircularLinkedList()
 cl.addBegin(10)
+cl.addEnd(60)
 cl.addBegin(20)
 cl.addBegin(-30)
+cl.addEnd(40)
 cl.traverse()
