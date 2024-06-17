@@ -38,10 +38,22 @@ class CircularLinkedList:
                 curr = curr.next
             curr.next = newnode
             newnode.next = self.head
+    def deleteBegin(self):
+        temp = self.head.next
+        if temp == self.head:
+            self.head = None
+        else:
+            curr = self.head
+            while curr.next != self.head:
+                curr = curr.next
+            curr.next = temp
+            self.head = temp
+        
 cl=CircularLinkedList()
 cl.addBegin(10)
 cl.addEnd(60)
 cl.addBegin(20)
 cl.addBegin(-30)
 cl.addEnd(40)
+cl.deleteBegin()
 cl.traverse()
