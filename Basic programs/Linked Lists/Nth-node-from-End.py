@@ -71,7 +71,9 @@ class LinkedList:
             slow = slow.next
             fast = fast.next.next
         print(slow.data)
-        
+    """
+    NAIVE METHOD
+    
     def NthNodefromEnd(self,n):
         curr = self.head
         length=1
@@ -84,6 +86,19 @@ class LinkedList:
         for i in range(length-n):
             curr = curr.next
         print(curr.data)
+    """
+    def NthNodefromEnd(self,n):
+        if self.head is None:
+            return -1
+        left = self.head
+        right = self.head
+        for i in range(n):
+            right = right.next
+        while right != None:
+            right = right.next
+            left = left.next
+        print(left.data)
+        
 l1=LinkedList()
 l1.insertBegin(60)
 l1.insertBegin(50)
