@@ -61,3 +61,20 @@ class Solution:
             res=max(res,curr)
         return res
 
+#BEST O(n) Single Traversal
+
+nums=[6,2,5,4,1,5,6]
+res=0
+s=[]
+for i in range(len(nums)):
+    while s and nums[s[-1]]>=nums[i]:
+        tp=s.pop()
+        curr = nums[tp]*(i if not s else (i-s[-1]-1))
+        res = max(res,curr)
+    s.append(i)
+while s:
+    tp = s.pop()
+    curr = nums[tp]*(len(nums) if not s else (len(nums)-s[-1]-1))
+    res = max(res,curr)
+print(res)
+
